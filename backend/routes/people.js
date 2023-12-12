@@ -3,11 +3,23 @@ const router = express.Router()
 const peopleCtrl = require ("../controllers/people.js")
 
 
-router.get("/", peopleCtrl.index)
-router.post("/", peopleCtrl.create)
-router.get("/:id", peopleCtrl.show)
-router.put("/:id", peopleCtrl.update)
-router.delete("/:id", peopleCtrl.delete)
 
+// controller import
+const peopleCtrl = require('../controllers/people')
 
-module.exports = router
+// People API - index (GET) - /people/
+router.get("/", peopleCtrl.index);
+
+// People API - create (POST) - /people/
+router.post("/", peopleCtrl.create);
+
+// People API - show (GET) - /people/:id
+router.get("/:id", peopleCtrl.show);
+
+// People API - destroy (DELETE) - /people/:id
+router.delete("/:id", peopleCtrl.delete);
+
+// People API - update (PUT) - /people/:id
+router.put("/:id", peopleCtrl.update);
+
+module.exports = router;

@@ -6,7 +6,7 @@ const {People} = require("../models/People")
 
 async function index(req, res, next){
     try{
-        res.json(await People.find())
+        res.status(200).json(await People.find())
     }catch (error){
         res.status(400).json(error)
     }
@@ -15,7 +15,7 @@ async function index(req, res, next){
 
 async function create(req, res, next){
     try{
-        res.json(await People.create(req.body))
+        res.status(201).json(await People.create(req.body))
     }catch (error){
         res.status(400).json(error)
     }
@@ -24,7 +24,7 @@ async function create(req, res, next){
 
 async function show(req, res, next){
     try{
-        res.json(await People.findById(req.params.id))
+        res.status(200).json(await People.findById(req.params.id))
     }catch (error){
         res.status(400).json(error)
     }
@@ -33,7 +33,7 @@ async function show(req, res, next){
 
 async function update(req, res, next){
     try{
-        res.json(await People.findBtIdAndUpdate(req.params.id, req.body, {new:true}))
+        res.status(200).json(await People.findBtIdAndUpdate(req.params.id, req.body, {new:true}))
     }catch (error){
         res.status(400).json(error)
     }
@@ -42,7 +42,7 @@ async function update(req, res, next){
 
 async function destroy(req, res, next){
     try{
-        res.json(await People.findByIdAndDelete(req.params.id))
+        res.status(200).json(await People.findByIdAndDelete(req.params.id))
         
     }catch (error){
         res.status(400).json(error)
