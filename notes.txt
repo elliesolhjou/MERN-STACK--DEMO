@@ -1,0 +1,1 @@
+connection string = mongodb+srv://testadmin:testadmin123@cluster1.0k2iree.mongodb.net/?retryWrites=true&w=majority
